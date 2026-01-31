@@ -25,9 +25,10 @@ app.get('/', (req, res) => {
 });
 
 // MongoDB Connection
-mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/stock_app')
-    .then(() => console.log('MongoDB Connected'))
-    .catch(err => console.error('MongoDB Connection Error:', err));
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log('MongoDB Connected'))
+  .catch(err => console.error('MongoDB Connection Error:', err));
+
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
